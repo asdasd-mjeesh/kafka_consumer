@@ -1,7 +1,8 @@
-package com.javamaster.service;
+package com.javamaster.service.impl;
 
 import com.javamaster.entity.User;
 import com.javamaster.repository.UserRepository;
+import com.javamaster.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

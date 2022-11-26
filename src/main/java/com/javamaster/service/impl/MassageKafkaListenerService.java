@@ -1,4 +1,4 @@
-package com.javamaster.service;
+package com.javamaster.service.impl;
 
 import com.javamaster.entity.Message;
 import com.javamaster.repository.MessageRepository;

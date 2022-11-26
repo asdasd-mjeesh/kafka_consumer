@@ -1,7 +1,7 @@
 package com.javamaster.rest_controller;
 
 import com.javamaster.entity.User;
-import com.javamaster.service.UserServiceImpl;
+import com.javamaster.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users/api/v1")
-public class UserController {
+public class UserControllerV1 {
     private final UserServiceImpl userService;
 
     @Autowired
-    public UserController(UserServiceImpl userService) {
+    public UserControllerV1(UserServiceImpl userService) {
         this.userService = userService;
     }
 
