@@ -1,6 +1,6 @@
 package com.javamaster.service.impl;
 
-import com.javamaster.entity.Message;
+import com.javamaster.model.Message;
 import com.javamaster.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;

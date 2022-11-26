@@ -1,6 +1,6 @@
 package com.javamaster.service;
 
-import com.javamaster.entity.User;
+import com.javamaster.model.User;
 
 import java.util.List;
 import java.util.Optional;

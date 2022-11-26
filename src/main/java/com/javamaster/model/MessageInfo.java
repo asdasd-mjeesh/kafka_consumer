@@ -1,4 +1,4 @@
-package com.javamaster.entity;
+package com.javamaster.model;
 
 import javax.persistence.*;
 import lombok.Data;

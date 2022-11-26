@@ -1,6 +1,6 @@
 package com.javamaster.service.impl;
 
-import com.javamaster.entity.User;
+import com.javamaster.model.User;
 import com.javamaster.repository.UserRepository;
 import com.javamaster.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

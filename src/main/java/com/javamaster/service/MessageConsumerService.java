@@ -1,6 +1,6 @@
 package com.javamaster.service;
 
-import com.javamaster.entity.Message;
+import com.javamaster.model.Message;
 
 public interface MessageConsumerService {
 

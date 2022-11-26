@@ -1,6 +1,6 @@
 package com.javamaster.rest_controller;
 
-import com.javamaster.entity.User;
+import com.javamaster.model.User;
 import com.javamaster.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/users/api/v1")
+@RequestMapping("/api/v1/users")
 public class UserControllerV1 {
     private final UserServiceImpl userService;
 
@@ -25,7 +25,7 @@ public class UserControllerV1 {
     }
 
     @GetMapping("/{id}")
-    ResponseEntity<?> findById(@RequestParam Long id) {
+    ResponseEntity<?> findById(@PathVariable Long id) {
         var user = userService.findById(id);
         if (user.isPresent()) {
             return new ResponseEntity<>(user.get(), HttpStatus.OK);
@@ -37,7 +37,7 @@ public class UserControllerV1 {
     @GetMapping("/")
     ResponseEntity<?> findAll() {
         var users = userService.findAll();
-        if (users.isEmpty()) {
+        if (!users.isEmpty()) {
             return new ResponseEntity<>(users, HttpStatus.OK);
         }
         return new ResponseEntity<>("database doesn't contain users",
@@ -45,13 +45,13 @@ public class UserControllerV1 {
     }
 
     @DeleteMapping("/{id}")
-    ResponseEntity<?> deleteById(@RequestParam Long id) {
+    ResponseEntity<?> deleteById(@PathVariable Long id) {
         boolean deleted = userService.deleteById(id);
         if (deleted) {
             return new ResponseEntity<>(String.format("user with id=%s was deleted", id) ,
                     HttpStatus.OK);
         }
         return new  ResponseEntity<>(String.format("user with id=%s wasn't deleted", id),
-                HttpStatus.OK);
+                HttpStatus.CONFLICT);
     }
 }
