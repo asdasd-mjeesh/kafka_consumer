@@ -1,5 +1,6 @@
 package com.javamaster.consumer;
 
+import com.javamaster.model.Message;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class ConsumerService {
 
     @KafkaListener(topics = "message", groupId = "message_group_id")
-    public void consume(String message) {
+    public void consume(Message message) {
         System.out.println(message);
     }
 }
